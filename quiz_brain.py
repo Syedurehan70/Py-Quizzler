@@ -15,8 +15,10 @@ class QuizBrain:
     def next_question(self):
         self.current_question = self.question_list[self.question_number]
         self.question_number += 1
+
         # this command turn html entities, which are actually punctuations in writing into their real form
         q_text = html.unescape(self.current_question.text)
+
         # because we want to pass it in another class
         return f"Q.{self.question_number}: {q_text} (True/False): "
         # user_answer = input(f"Q.{self.question_number}: {q_text} (True/False): ")

@@ -1,6 +1,8 @@
 import requests
 
-# 10 diff questions everytime, True and False format
+# from API we're requesting 10 diff questions everytime, in True and False format.
+# (related to specific topic give category otherwise don't)
+
 parameters = {
     "amount": 10,
     "type": "boolean",
@@ -11,7 +13,8 @@ response = requests.get("https://opentdb.com/api.php", params=parameters)
 response.raise_for_status()
 
 data = response.json()
-# this question_data save a list of 10 questions now with all the attributes you can see in below list of dict
+
+# this question_data saves a list of 10 questions now with all the attributes you can see in below list of dicts
 question_data = data["results"]
 
 
